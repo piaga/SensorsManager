@@ -1,0 +1,14 @@
+package model.sensors.enumerators;
+
+public enum SENSOR_TYPE {
+	ACCELEROMETER,
+	BATTERY,
+	CAMERA,
+	GPS,
+	LIGHT,
+	MAGNETIC,
+	ORIENTATION,
+	PRESSURE,
+	PROXIMITY,
+	TEMPERATURE
+}
