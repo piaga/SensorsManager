@@ -3,7 +3,7 @@ Implementation-Title: SensorsManager
 Implementation-Version: 0.0.2-SNAPSHOT
 Built-By: janus
 Implementation-Vendor-Id: SensorsManager
-Build-Jdk: 1.8.0_151
+Build-Jdk: 1.8.0_162
 Implementation-URL: http://projects.spring.io/spring-boot/SensorsManag
  er/
 Created-By: Maven Integration for Eclipse

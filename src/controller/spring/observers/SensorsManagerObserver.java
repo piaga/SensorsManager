@@ -1,4 +1,4 @@
-package controller.observers;
+package controller.spring.observers;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -7,8 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.google.gson.Gson;
 
-
-import controller.WebSocketController;
+import controller.spring.WebSocketController;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import model.manager.*;

@@ -1,4 +1,4 @@
-package controller;
+package controller.spring;
 
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.boot.SpringApplication;
@@ -10,8 +10,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.google.gson.Gson;
 
-import controller.handlers.ApplicationEventListener;
-import controller.observers.SensorsManagerObserver;
+import controller.spring.handlers.ApplicationEventListener;
+import controller.spring.observers.SensorsManagerObserver;
 import model.manager.SensorsManager;
 
 @SpringBootApplication

@@ -1,4 +1,4 @@
-package controller.handlers;
+package controller.spring.handlers;
 
 import java.util.ArrayList;
 
@@ -13,8 +13,8 @@ import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 import org.springframework.web.socket.messaging.SessionSubscribeEvent;
 import org.springframework.web.socket.messaging.SessionUnsubscribeEvent;
 
-import controller.WebSocketController;
-import controller.observers.SensorsManagerObserver;
+import controller.spring.WebSocketController;
+import controller.spring.observers.SensorsManagerObserver;
 import model.manager.SensorsManager;
 
 @Component

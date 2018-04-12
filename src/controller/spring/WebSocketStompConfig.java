@@ -1,4 +1,4 @@
-package controller;
+package controller.spring;
 
 import java.util.Optional;
 import java.util.Random;
@@ -15,8 +15,8 @@ import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
-import controller.handlers.HttpHandshakeInterceptor;
-import controller.observers.SensorsManagerObserver;
+import controller.spring.handlers.HttpHandshakeInterceptor;
+import controller.spring.observers.SensorsManagerObserver;
 import model.manager.SensorsManager;
 import model.sensors.DefectedRealVirtualSensor;
 import model.sensors.WorkingCoordinatesVirtualSensor;

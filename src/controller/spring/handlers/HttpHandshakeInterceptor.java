@@ -1,4 +1,4 @@
-package controller.handlers;
+package controller.spring.handlers;
 
 import java.time.LocalDateTime;
 import java.util.Map;

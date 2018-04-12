@@ -1,4 +1,4 @@
-package controller;
+package controller.spring;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Controller;
 
 import com.google.gson.Gson;
 
-import controller.observers.SensorsManagerObserver;
+import controller.spring.observers.SensorsManagerObserver;
 
 @Controller
 public class WebSocketController {
