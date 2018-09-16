@@ -9,13 +9,14 @@ import model.manager.structures.EntrySet;
 import model.sensors.*;
 import model.sensors.enumerators.*;
 import model.sensors.structures.Vector3;
+import model.sensors.virtual.WorkingRealVirtualSensor;
 
 
 public class WorkingSensorTest {
 	
 	public static void main(String[] args) throws Exception {
 		int count=10;
-		ISensor sensor=new WorkingRealVirtualSensor<Vector3>(0,new Vector3(),-20, 50, 2, 10,
+		ISensor sensor=new WorkingRealVirtualSensor<Vector3>(java.util.UUID.randomUUID(),new Vector3(),-20, 50, 2, 10,
 				SENSOR_TYPE.ACCELEROMETER, SENSOR_SIMULATION_PATTERN.SINUSOIDAL , Optional.ofNullable(4));
 		
 		Observer observer=new Observer<EntrySet>() {

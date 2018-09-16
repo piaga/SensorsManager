@@ -1,5 +1,6 @@
-package model.sensors;
+package model.sensors.virtual;
 
+import java.util.UUID;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.Random;
@@ -7,6 +8,8 @@ import java.util.Random;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import model.manager.structures.EntrySet;
+import model.sensors.AbstractSensor;
+import model.sensors.ISensor;
 import model.sensors.enumerators.SENSOR_DETAIL;
 import model.sensors.enumerators.SENSOR_GENERIC;
 import model.sensors.enumerators.SENSOR_SIMULATION_PATTERN;
@@ -41,7 +44,7 @@ public abstract class AbstractRealVirtualSensor<T extends Object> extends Abstra
 	protected double flatPositive, flatNegative, interval;
 	
 	public AbstractRealVirtualSensor(
-			long id,
+			UUID id,
 			T startValue,
 			double minValue,
 			double maxValue,

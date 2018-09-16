@@ -18,15 +18,15 @@ import org.springframework.web.socket.server.support.HttpSessionHandshakeInterce
 import controller.spring.handlers.HttpHandshakeInterceptor;
 import controller.spring.observers.SensorsManagerObserver;
 import model.manager.SensorsManager;
-import model.sensors.DefectedRealVirtualSensor;
-import model.sensors.WorkingCoordinatesVirtualSensor;
-import model.sensors.WorkingDependantRealVirtualSensor;
-import model.sensors.WorkingImageVirtualSensor;
-import model.sensors.WorkingRealVirtualSensor;
 import model.sensors.enumerators.SENSOR_SIMULATION_PATTERN;
 import model.sensors.enumerators.SENSOR_TYPE;
 import model.sensors.structures.GeographicCoordinates;
 import model.sensors.structures.Vector3;
+import model.sensors.virtual.DefectedRealVirtualSensor;
+import model.sensors.virtual.WorkingCoordinatesVirtualSensor;
+import model.sensors.virtual.WorkingDependantRealVirtualSensor;
+import model.sensors.virtual.WorkingImageVirtualSensor;
+import model.sensors.virtual.WorkingRealVirtualSensor;
 
 @Configuration
 @EnableWebSocketMessageBroker
@@ -88,7 +88,7 @@ public class WebSocketStompConfig extends AbstractWebSocketMessageBrokerConfigur
 					(double)10,(double) 0,(double) 40,(double) 20, 200,(int)( 1200/timeScale),(int)( 50/timeScale), SENSOR_TYPE.PRESSURE, SENSOR_SIMULATION_PATTERN.QUADRATIC, Optional.ofNullable(5)));
 			manager.addSensor(new WorkingRealVirtualSensor<Double>(SensorsManager.getNewId(),(double) 100,(double) 0,(double) 100,(double) 0,(int) (2000/timeScale), SENSOR_TYPE.BATTERY, SENSOR_SIMULATION_PATTERN.SINUSOIDAL, Optional.ofNullable(100)));
 			manager.addSensor(new WorkingRealVirtualSensor<Double>(SensorsManager.getNewId(),(double) 100,(double)0,(double)100,(double)3,(int)(124/timeScale),SENSOR_TYPE.PROXIMITY,SENSOR_SIMULATION_PATTERN.SINUSOIDAL,Optional.ofNullable(100)));
-			manager.addSensor(new WorkingRealVirtualSensor<Double>(SensorsManager.getNewId(),new Double(20),new Double(10),new Double(80),new Double(1),(int)(368/timeScale),SENSOR_TYPE.TEMPERATURE,SENSOR_SIMULATION_PATTERN.RANDOM,Optional.empty()));
+			//manager.addSensor(new WorkingRealVirtualSensor<Double>(SensorsManager.getNewId(),new Double(20),new Double(10),new Double(80),new Double(1),(int)(368/timeScale),SENSOR_TYPE.TEMPERATURE,SENSOR_SIMULATION_PATTERN.RANDOM,Optional.empty()));
 			
 		}
 		return manager;

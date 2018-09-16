@@ -1,10 +1,9 @@
 package model.sensors.structures;
 
-import model.sensors.enumerators.*;
-
-
 import java.util.HashMap;
 import java.util.Optional;
+
+import model.sensors.enumerators.*;
 
 public class SensorDetails {
 	HashMap<SENSOR_DETAIL, Object> details;

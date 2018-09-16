@@ -1,8 +1,8 @@
 package model.sensors;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
+import java.util.UUID;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -15,14 +15,14 @@ import model.sensors.structures.SensorDetails;
 public abstract class AbstractSensor<T extends Object> extends Observable<EntrySet> implements ISensor {
 	
 	Thread thread;
-	protected long id;
+	protected UUID id;
 	protected final SENSOR_TYPE sensorType;
 	protected SENSOR_STATUS status;
 	protected SensorDetails details;
 	protected Optional<Observer<? super EntrySet>> connectedObserver;
 	
 	
-	public AbstractSensor(long id, SENSOR_TYPE sensorType) {
+	public AbstractSensor(UUID id, SENSOR_TYPE sensorType) {
 		this.id=id;
 		this.connectedObserver=Optional.empty();
 		this.sensorType=sensorType;
@@ -67,12 +67,12 @@ public abstract class AbstractSensor<T extends Object> extends Observable<EntryS
 	
 	
 	@Override
-	public final long getId()
+	public final UUID getGuid()
 	{
 		return this.id;
 	}
 	
-	@SuppressWarnings("unchecked")
+	
 	@Override
 	protected final void subscribeActual(Observer<? super EntrySet> observer)
 	{

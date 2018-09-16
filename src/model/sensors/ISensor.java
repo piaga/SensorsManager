@@ -1,7 +1,7 @@
 package model.sensors;
 
 import java.util.HashMap;
-
+import java.util.*;
 import io.reactivex.Observable;
 import model.manager.structures.EntrySet;
 import model.sensors.enumerators.*;
@@ -15,7 +15,7 @@ public interface ISensor extends Runnable{
 	
 	public HashMap<SENSOR_DETAIL, Object> getSensorDetails();
 	
-	public long getId();
+	public UUID getGuid();
 	
 	public Observable<EntrySet> getObservable();
 	

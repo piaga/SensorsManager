@@ -9,6 +9,7 @@ import model.sensors.*;
 import model.sensors.enumerators.SENSOR_SIMULATION_PATTERN;
 import model.sensors.enumerators.SENSOR_TYPE;
 import model.sensors.structures.Vector3;
+import model.sensors.virtual.WorkingRealVirtualSensor;
 
 public class SensorsObserverTest {
 	

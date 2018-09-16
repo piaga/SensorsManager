@@ -1,7 +1,10 @@
-package model.sensors;
+package model.sensors.virtual;
 
 import java.util.Optional;
+import java.util.UUID;
 
+import model.sensors.AbstractSensor;
+import model.sensors.ISensor;
 import model.sensors.enumerators.SENSOR_DETAIL;
 import model.sensors.enumerators.SENSOR_STATUS;
 import model.sensors.enumerators.SENSOR_TYPE;
@@ -13,12 +16,12 @@ public abstract class AbstractCoordinatesVirtualSensor extends AbstractSensor<Ge
 	protected int timeForCapture;
 	protected Optional<GeographicCoordinates> lastValue;
 
-	public AbstractCoordinatesVirtualSensor(long id, SENSOR_TYPE sensorType) {
+	public AbstractCoordinatesVirtualSensor(UUID id, SENSOR_TYPE sensorType) {
 		super(id, sensorType);
 		this.details.addDetail(SENSOR_DETAIL.DELAY, this.timeForCapture);
 	}
 	
-	public AbstractCoordinatesVirtualSensor(long id,Optional<GeographicCoordinates> startValue, double maxPeakFromLast,int timeForCapture,SENSOR_TYPE sensorType) {
+	public AbstractCoordinatesVirtualSensor(UUID id,Optional<GeographicCoordinates> startValue, double maxPeakFromLast,int timeForCapture,SENSOR_TYPE sensorType) {
 		super(id, sensorType);
 		this.maxPeakFromLast=maxPeakFromLast;
 		this.timeForCapture=timeForCapture;

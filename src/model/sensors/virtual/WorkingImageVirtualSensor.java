@@ -1,12 +1,12 @@
-package model.sensors;
+package model.sensors.virtual;
 
 
-import java.awt.GraphicsConfiguration;
-import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
 import java.util.Optional;
+import java.util.UUID;
 
 import model.manager.structures.EntrySet;
+import model.sensors.AbstractSensor;
 import model.sensors.enumerators.SENSOR_DETAIL;
 import model.sensors.enumerators.SENSOR_STATUS;
 import model.sensors.enumerators.SENSOR_TYPE;
@@ -18,7 +18,7 @@ public class WorkingImageVirtualSensor extends AbstractSensor<Object> {
 	private long time_start,t1,t2;
 	private Image image;
 	
-	public WorkingImageVirtualSensor(long id, SENSOR_TYPE sensorType,int delay) {
+	public WorkingImageVirtualSensor(UUID id, SENSOR_TYPE sensorType,int delay) {
 		super(id, sensorType);
 		this.delay=delay;
 		image=new Image(Optional.empty(), Optional.empty(), Optional.empty());

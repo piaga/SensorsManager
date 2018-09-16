@@ -1,5 +1,5 @@
-package model.sensors;
-
+package model.sensors.virtual;
+import java.util.UUID;
 import java.util.Optional;
 
 import model.manager.structures.EntrySet;
@@ -12,7 +12,7 @@ public class DefectedRealVirtualSensor<T extends Object> extends AbstractRealVir
 	private int millisToDefect; 
 	private double percentOfDefect;
 
-	public DefectedRealVirtualSensor(long id, T startValue, double minValue, double maxValue,
+	public DefectedRealVirtualSensor(UUID id, T startValue, double minValue, double maxValue,
 			double maxPeakFromLast, int timeForCapture,int millisToDefect,double percentOfDefect, SENSOR_TYPE sensorType, SENSOR_SIMULATION_PATTERN pattern,
 			Optional<Integer> pattern_duration) throws Exception {
 		super(id, startValue, minValue, maxValue, maxPeakFromLast, timeForCapture, sensorType, pattern, pattern_duration);

@@ -1,7 +1,8 @@
-package model.sensors;
+package model.sensors.virtual;
 
 import java.util.Optional;
 import java.util.Random;
+import java.util.UUID;
 
 import model.manager.structures.EntrySet;
 import model.sensors.enumerators.SENSOR_SIMULATION_PATTERN;
@@ -19,7 +20,7 @@ public class WorkingRealVirtualSensor<T extends Object> extends AbstractRealVirt
 	
 	
 
-	public WorkingRealVirtualSensor(long id,T startValue,double minValue, double maxValue, double maxPeakFromLast, int timeForCapture,
+	public WorkingRealVirtualSensor(UUID id,T startValue,double minValue, double maxValue, double maxPeakFromLast, int timeForCapture,
 			SENSOR_TYPE sensorType, SENSOR_SIMULATION_PATTERN pattern, Optional<Integer> patter_duration) throws Exception {
 		
 		super(id,startValue,minValue, maxValue, maxPeakFromLast, timeForCapture, sensorType, pattern, patter_duration);

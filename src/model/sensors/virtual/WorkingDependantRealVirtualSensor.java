@@ -1,6 +1,8 @@
-package model.sensors;
-
+package model.sensors.virtual;
+import java.util.UUID;
 import model.manager.structures.EntrySet;
+import model.sensors.AbstractSensor;
+import model.sensors.ISensor;
 import model.sensors.enumerators.SENSOR_DETAIL;
 import model.sensors.enumerators.SENSOR_STATUS;
 import model.sensors.enumerators.SENSOR_TYPE;
@@ -12,7 +14,7 @@ public class WorkingDependantRealVirtualSensor<T> extends AbstractSensor<T> {
 	int count=0;
 	double min=0,max=1000;
 	
-	public WorkingDependantRealVirtualSensor(long id, SENSOR_TYPE sensorType,ISensor sensor) throws Exception{
+	public WorkingDependantRealVirtualSensor(UUID id, SENSOR_TYPE sensorType,ISensor sensor) throws Exception{
 		super(id, sensorType);
 		if (sensor instanceof WorkingImageVirtualSensor)
 			this.sensorParent=sensor;

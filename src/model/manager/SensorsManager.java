@@ -5,6 +5,7 @@ package model.manager;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
+import java.util.UUID;
 
 
 
@@ -24,7 +25,7 @@ import model.sensors.enumerators.SENSOR_TYPE;
 @Component("SensorsManager")
 public class SensorsManager extends AbstractSensorManager implements ISensorsManager{
 	
-	private static long identificatorFactory=0;
+	
 	private static Optional<SensorsManager> sensorsObserver=Optional.empty();
 	
 	private HashMap<SENSOR_TYPE,Optional<ISensor>> sensorsMap;
@@ -59,19 +60,8 @@ public class SensorsManager extends AbstractSensorManager implements ISensorsMan
 		return manager;
 	}
 	
-	
-	
-	
-	private long getId() {
 
-		return this.id;
-	}
-
-	public static long getNewId()
-	{
-		identificatorFactory++;
-		return identificatorFactory; 
-	}
+	
 
 	@Override
 	public void addSensor(ISensor sensor) throws Exception{
@@ -101,10 +91,10 @@ public class SensorsManager extends AbstractSensorManager implements ISensorsMan
 	}
 
 	@Override
-	public Optional<ISensor> getSensorById(long id) {
+	public Optional<ISensor> getSensorByUUID(UUID id) {
 		
 		for(Optional<ISensor> sensor:sensorsMap.values())
-			if (sensor.isPresent()&&sensor.get().getId()==id)
+			if (sensor.isPresent()&& id.compareTo(sensor.get().getGuid())==0)
 				return sensor;
 		return Optional.empty();
 	}
@@ -142,7 +132,7 @@ public class SensorsManager extends AbstractSensorManager implements ISensorsMan
 	@Override
 	public void onSubscribe(Disposable disposable) {
 		ISensor sensor=(ISensor)disposable;
-		System.out.println("[SensorsObserver] Connected to sensor "+sensor.getId());
+		System.out.println("[SensorsObserver] Connected to sensor "+sensor.getGuid());
 
 	}
 

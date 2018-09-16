@@ -1,5 +1,6 @@
-package model.sensors;
+package model.sensors.virtual;
 
+import java.util.UUID;
 import java.util.Optional;
 import java.util.Random;
 
@@ -17,7 +18,7 @@ public class WorkingCoordinatesVirtualSensor extends AbstractCoordinatesVirtualS
 	private Random random;
 	
 
-	public WorkingCoordinatesVirtualSensor(long id,Optional<GeographicCoordinates> startValue, double randomMetersFromLast, int timeForCapture,
+	public WorkingCoordinatesVirtualSensor(UUID id,Optional<GeographicCoordinates> startValue, double randomMetersFromLast, int timeForCapture,
 			SENSOR_TYPE sensorType) {
 		super(id,startValue,randomMetersFromLast, timeForCapture, sensorType);
 		random=new Random();

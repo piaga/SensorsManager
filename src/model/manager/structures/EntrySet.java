@@ -1,9 +1,9 @@
 package model.manager.structures;
-import model.sensors.enumerators.*;
-
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.Date;
+
+import model.sensors.enumerators.*;
 
 
 public class EntrySet {
